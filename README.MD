@@ -293,7 +293,7 @@ View Dashboard
 ---
 
 ## 📸 Screenshots
-Screenshots\Homepage.png
+![homepage] (Screenshots/Homepage.png)
 Screenshots\Create account page.png
 Screenshots\Profile page.png
 Screenshots\Sign in page.png
