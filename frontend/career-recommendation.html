@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Recommendation — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Career <em>Recommendation</em></h1>
+      <p>Tell us about your interests and skills — our AI will suggest the most suitable career paths for you.</p>
+    </div>
+  </section>
+
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon"><i class="fas fa-compass"></i></div>
+          <h1 class="tool-title">Find Your Career Path</h1>
+          <p class="tool-sub">Select your subject and enter your interests to get personalized AI-powered career recommendations.</p>
+        </div>
+
+        <form id="career-rec-form" novalidate>
+          <div class="form-group">
+            <label for="subjects">Favourite Subject / Interest Area</label>
+            <select id="subjects" name="subjects" class="form-control" required>
+              <option value="">Choose a subject...</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Economics">Economics</option>
+              <option value="Accounts">Accounts / Commerce</option>
+              <option value="History">History</option>
+              <option value="Geography">Geography</option>
+              <option value="Literature">Literature / English</option>
+              <option value="Fine Arts">Fine Arts</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Political Science">Political Science</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="interests">Your Interests (describe in a few words)</label>
+            <input type="text" id="interests" name="interests" class="form-control" placeholder="e.g. problem solving, helping people, designing, coding..." required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="skills">Your Skills</label>
+              <input type="text" id="skills" name="skills" class="form-control" placeholder="e.g. analytical, creative, communication...">
+            </div>
+            <div class="form-group">
+              <label for="grade">Class / Grade</label>
+              <select id="grade" name="grade" class="form-control">
+                <option value="">Select grade</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+                <option value="graduate">Graduate</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <i class="fas fa-magic"></i> Get Career Recommendations
+          </button>
+        </form>
+
+        <!-- Results -->
+        <div id="career-result" class="result-area">
+          <!-- Filled by JS -->
+        </div>
+
+        <div style="margin-top:24px;text-align:center;font-size:.82rem;color:var(--gray-400)">
+          <i class="fas fa-info-circle"></i> Results are AI-generated based on your input. Always consider multiple options before making a final decision.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

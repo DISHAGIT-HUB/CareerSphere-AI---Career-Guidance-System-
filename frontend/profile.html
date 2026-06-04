@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div class="profile-layout">
+    <!-- Profile Sidebar -->
+    <div class="profile-sidebar-card">
+      <div class="profile-avatar" id="profile-avatar-text">S</div>
+      <div class="profile-name" id="profile-display-name">Student</div>
+      <div class="profile-email" id="profile-display-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a696e6f7e7f746e5a7f627b776a767f34797577">[email&#160;protected]</a></div>
+      <div class="profile-badge">
+        <span class="badge badge-blue"><i class="fas fa-graduation-cap"></i> Student</span>
+      </div>
+      <div class="profile-stats-mini">
+        <div class="psm-item">
+          <div class="psm-num">4</div>
+          <div class="psm-label">Modules</div>
+        </div>
+        <div class="psm-item" style="border-left:1px solid var(--gray-200);padding-left:16px">
+          <div class="psm-num">0</div>
+          <div class="psm-label">Reports</div>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px">
+        <a href="/dashboard.html" class="btn btn-outline btn-sm btn-full"><i class="fas fa-th-large"></i> Dashboard</a>
+        <a href="/reports.html" class="btn btn-outline btn-sm btn-full"><i class="fas fa-file-alt"></i> My Reports</a>
+      </div>
+    </div>
+
+    <!-- Profile Form -->
+    <div>
+      <div class="profile-form-card">
+        <div class="profile-section-title"><i class="fas fa-user-edit" style="color:var(--blue-mid)"></i> Personal Information</div>
+
+        <div id="profile-alert" class="alert"></div>
+
+        <form id="profile-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profile-name">Full Name</label>
+              <input type="text" id="profile-name" name="profile_name" class="form-control" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="profile-email">Email Address</label>
+              <input type="email" id="profile-email" name="email" class="form-control" placeholder="your@email.com" readonly style="background:var(--gray-50)">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label for="grade">Current Grade / Class</label>
+              <select id="grade" name="grade" class="form-control">
+                <option value="">Select your grade</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+                <option value="graduate">Undergraduate</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state" class="form-control">
+              <option value="">Select your state</option>
+              <option>Maharashtra</option><option>Delhi</option><option>Karnataka</option>
+              <option>Tamil Nadu</option><option>Gujarat</option><option>Rajasthan</option>
+              <option>Uttar Pradesh</option><option>West Bengal</option><option>Telangana</option>
+              <option>Andhra Pradesh</option><option>Kerala</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="interests">Career Interests</label>
+            <input type="text" id="interests" name="interests" class="form-control" placeholder="e.g. Technology, Medicine, Finance, Arts...">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+        </form>
+      </div>
+
+      <!-- Change Password Card -->
+      <div class="profile-form-card" style="margin-top:24px">
+        <div class="profile-section-title"><i class="fas fa-lock" style="color:var(--blue-mid)"></i> Change Password</div>
+        <form id="password-form" novalidate>
+          <div class="form-group">
+            <label>Current Password</label>
+            <input type="password" name="current_password" class="form-control" placeholder="Enter current password">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" name="new_password" class="form-control" placeholder="New password">
+            </div>
+            <div class="form-group">
+              <label>Confirm New Password</label>
+              <input type="password" name="confirm_password" class="form-control" placeholder="Confirm new password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline">
+            <i class="fas fa-key"></i> Update Password
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

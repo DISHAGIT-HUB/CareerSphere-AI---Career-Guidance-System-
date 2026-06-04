@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .not-found-wrap {
+      min-height: calc(100vh - 140px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .not-found-code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 15vw, 10rem);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .not-found-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .not-found-sub {
+      color: var(--gray-400);
+      font-size: .95rem;
+      max-width: 400px;
+      margin: 0 auto 36px;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div class="not-found-wrap">
+    <div>
+      <div class="not-found-code">404</div>
+      <h1 class="not-found-title">Page Not Found</h1>
+      <p class="not-found-sub">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+      <div class="not-found-actions">
+        <a href="/index.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-home"></i> Go Home
+        </a>
+        <a href="/modules.html" class="btn btn-outline btn-lg">
+          <i class="fas fa-compass"></i> Explore Modules
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

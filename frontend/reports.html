@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Career Report – CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="/css/report.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <!-- LOADING STATE -->
+  <div id="report-loading" class="report-loading">
+    <div class="loading-spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
+    <p>Generating your personalised career report...</p>
+  </div>
+
+  <!-- NO DATA STATE -->
+  <div id="report-empty" class="report-empty hidden">
+    <div class="empty-icon"><i class="fas fa-file-alt"></i></div>
+    <h2>No Report Yet</h2>
+    <p>Complete at least one module to generate your career guidance report.</p>
+    <div class="empty-actions">
+      <a href="/stream-selector.html" class="btn btn-primary"><i class="fas fa-layer-group"></i> Take Stream Quiz</a>
+      <a href="/career-recommendation.html" class="btn btn-outline"><i class="fas fa-compass"></i> Explore Careers</a>
+    </div>
+  </div>
+
+  <!-- REPORT CONTENT -->
+  <div id="report-content" class="hidden">
+
+    <!-- REPORT HEADER -->
+    <div class="rpt-hero" id="rpt-hero">
+      <div class="container">
+        <div class="rpt-hero-inner">
+          <div>
+            <div class="rpt-logo-row">
+              <div class="rpt-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <div class="rpt-logo-text">CareerSphere</div>
+                <div class="rpt-logo-sub">Student Career Guidance &amp; Awareness Platform</div>
+              </div>
+            </div>
+            <h1 class="rpt-title"><i class="fas fa-file-alt"></i> Career Guidance Report</h1>
+          </div>
+          <div class="rpt-meta-box">
+            <div class="rpt-meta-row"><span>Report ID:</span><strong id="rpt-id">—</strong></div>
+            <div class="rpt-meta-row"><span>Generated:</span><strong id="rpt-date">—</strong></div>
+            <div class="rpt-meta-row"><span>Valid for:</span><strong id="rpt-year">—</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container rpt-body">
+
+      <!-- SECTION 1: STUDENT IDENTITY -->
+      <div class="student-identity-card">
+        <div class="student-avatar" id="rpt-avatar">S</div>
+        <div class="student-info">
+          <div class="student-name" id="rpt-name">Student</div>
+          <div class="student-meta">
+            <span><i class="fas fa-school"></i> <span id="rpt-grade">—</span></span>
+            <span><i class="fas fa-map-marker-alt"></i> <span id="rpt-city">—</span></span>
+            <span><i class="fas fa-calendar-alt"></i> Joined: <span id="rpt-joined">—</span></span>
+          </div>
+        </div>
+        <div class="student-contact">
+          <div><i class="fas fa-envelope"></i> <span id="rpt-email">—</span></div>
+          <div style="margin-top:4px"><i class="fas fa-globe"></i> careersphere.in/report/<span id="rpt-short-id">—</span></div>
+        </div>
+      </div>
+
+      <!-- ACTIVITY STATS -->
+      <div class="rpt-section-title">Platform Activity</div>
+      <div class="stats-row">
+        <div class="stat-box blue"><div class="stat-val" id="stat-modules">0</div><div class="stat-lbl">Modules Used</div></div>
+        <div class="stat-box green"><div class="stat-val" id="stat-quizzes">0</div><div class="stat-lbl">Quizzes Taken</div></div>
+        <div class="stat-box purple"><div class="stat-val" id="stat-bookmarks">0</div><div class="stat-lbl">Degrees Saved</div></div>
+        <div class="stat-box amber"><div class="stat-val" id="stat-careers">0</div><div class="stat-lbl">Careers Explored</div></div>
+      </div>
+
+      <!-- SECTION 2: INTEREST PROFILE -->
+      <div class="rpt-section-title">Interest &amp; Skill Profile</div>
+      <div class="grid-2">
+        <div class="info-card">
+          <div class="info-card-title"><i class="fas fa-book"></i> Academic Profile</div>
+          <div class="info-row"><span class="info-lbl">Favourite Subject</span><span class="info-val" id="prof-subject">—</span></div>
+          <div class="info-row"><span class="info-lbl">Interests</span><span class="info-val" id="prof-interests">—</span></div>
+          <div class="info-row"><span class="info-lbl">Skills</span><span class="info-val" id="prof-skills">—</span></div>
+          <div class="info-row"><span class="info-lbl">Grade</span><span class="info-val" id="prof-grade">—</span></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title"><i class="fas fa-chart-bar"></i> Skill Strength Meter</div>
+          <div id="skill-bars">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: STREAM RECOMMENDATION -->
+      <div class="rpt-section-title">Stream Recommendation</div>
+      <div class="grid-2">
+        <div class="stream-card" id="stream-card">
+          <div class="stream-badge-label">✅ Recommended Stream</div>
+          <div class="stream-name" id="stream-name">—</div>
+          <div class="stream-desc" id="stream-desc">—</div>
+          <div class="stream-subjects" id="stream-subjects"></div>
+          <div class="stream-confidence">
+            <div class="conf-label">MATCH CONFIDENCE</div>
+            <div class="conf-bar"><div class="conf-fill" id="conf-fill" style="width:0%"></div></div>
+            <div class="conf-pct" id="conf-pct">—</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title"><i class="fas fa-clipboard-list"></i> Your Quiz Answers</div>
+          <div id="quiz-answers">
+            <div class="empty-answers">Complete the Stream Selector quiz to see your answers here.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: CAREER RECOMMENDATIONS -->
+      <div class="rpt-section-title">Top Career Recommendations</div>
+      <div class="career-grid" id="career-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- SECTION 5: EXAM ROADMAP -->
+      <div class="rpt-section-title">Entrance Exam Roadmap</div>
+      <div class="exam-roadmap" id="exam-roadmap">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- SECTION 6: ACTION PLAN -->
+      <div class="rpt-section-title">Personalised Action Plan</div>
+      <div class="action-grid">
+        <div class="action-col green">
+          <div class="action-period">⚡ Next 3 Months</div>
+          <ul class="action-list" id="action-3m"></ul>
+        </div>
+        <div class="action-col blue">
+          <div class="action-period">📅 Next 1 Year</div>
+          <ul class="action-list" id="action-1y"></ul>
+        </div>
+        <div class="action-col purple">
+          <div class="action-period">🚀 Long Term (3–5 Yrs)</div>
+          <ul class="action-list" id="action-5y"></ul>
+        </div>
+      </div>
+
+      <!-- SECTION 7: BOOKMARKED DEGREES -->
+      <div class="rpt-section-title">Bookmarked Degrees</div>
+      <div class="degree-grid" id="degree-grid">
+        <div class="no-bookmarks"><i class="fas fa-bookmark"></i><p>No degrees bookmarked yet.<br/><a href="/degree-finder.html">Explore Degree Finder →</a></p></div>
+      </div>
+
+      <!-- REPORT FOOTER -->
+      <div class="rpt-footer">
+        <div class="rpt-footer-left">
+          <div class="rpt-footer-brand">CareerSphere — Student Career Guidance Platform</div>
+          <div class="rpt-footer-meta">Report ID: <span id="footer-id">—</span> &nbsp;|&nbsp; Generated: <span id="footer-date">—</span> &nbsp;|&nbsp; careersphere.in</div>
+        </div>
+        <button class="btn-print" onclick="window.print()"><i class="fas fa-download"></i> Download PDF</button>
+      </div>
+
+      <div class="rpt-disclaimer">
+        <i class="fas fa-exclamation-triangle"></i>
+        This report is AI-generated based on the student's inputs and quiz answers. Results are for guidance purposes only. Always consult a qualified career counsellor before making final decisions. CareerSphere does not guarantee any specific outcomes.
+      </div>
+
+      <!-- BOOK COUNSELOR CTA -->
+      <div class="counselor-cta">
+        <div class="counselor-cta-text">
+          <h3>Still have doubts after reading your report?</h3>
+          <p>Book a free 1-on-1 session with a certified career counselor who will review this report and answer all your questions.</p>
+        </div>
+        <a href="/book-session.html" class="btn btn-white-outline"><i class="fas fa-calendar-plus"></i> Book Free Counselor Session</a>
+      </div>
+
+    </div><!-- /rpt-body -->
+  </div><!-- /report-content -->
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+<script src="/js/report.js"></script>
+</body>
+</html>

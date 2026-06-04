@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Selector — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Stream <em>Selector Quiz</em></h1>
+      <p>Answer 5 quick questions to find the ideal stream — Science, Commerce, or Arts — based on your interests and aptitude.</p>
+    </div>
+  </section>
+
+  <section class="tool-page">
+    <div class="container">
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h1 class="tool-title">Find Your Ideal Stream</h1>
+          <p class="tool-sub">Answer all 5 questions honestly to get the most accurate stream recommendation after 10th.</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container">
+          <div class="quiz-progress">
+            <span id="prog-text">Question 1 of 5</span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" id="prog-fill" style="width:0%"></div>
+            </div>
+            <span id="prog-pct">0%</span>
+          </div>
+
+          <div class="quiz-question" id="quiz-question">Loading question...</div>
+          <div id="quiz-options"></div>
+
+          <div class="quiz-nav">
+            <button id="quiz-prev" class="btn btn-outline" disabled>
+              <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <button id="quiz-next" class="btn btn-primary">
+              Next <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Stream Result -->
+        <div id="stream-result" class="stream-result">
+          <i class="fas fa-award" style="font-size:3rem;color:var(--amber);margin-bottom:12px"></i>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--navy)">Your Recommended Stream</h3>
+          <div class="stream-badge-large" id="stream-name">Science</div>
+          <p id="stream-desc" style="color:var(--gray-500);font-size:.92rem;max-width:480px;margin:0 auto 24px"></p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left;margin-top:8px">
+            <div style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);padding:20px">
+              <h4 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:12px;font-size:.95rem">
+                <i class="fas fa-book" style="color:var(--blue-mid)"></i> Key Subjects
+              </h4>
+              <ul id="stream-subjects" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--gray-600)">
+              </ul>
+            </div>
+            <div style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-md);padding:20px">
+              <h4 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:12px;font-size:.95rem">
+                <i class="fas fa-briefcase" style="color:var(--blue-mid)"></i> Career Opportunities
+              </h4>
+              <div id="stream-careers" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap">
+            <a href="/career-recommendation.html" class="btn btn-primary">
+              <i class="fas fa-compass"></i> Explore Career Paths
+            </a>
+            <button onclick="location.reload()" class="btn btn-outline">
+              <i class="fas fa-redo"></i> Retake Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

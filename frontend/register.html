@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div class="auth-page">
+    <!-- Left Panel -->
+    <div class="auth-panel-left">
+      <h2>Join CareerSphere Today</h2>
+      <p>Create your free account and start your personalized career exploration journey with AI-powered tools.</p>
+
+      <div class="auth-benefit">
+        <div class="auth-benefit-icon"><i class="fas fa-compass"></i></div>
+        <div class="auth-benefit-text">
+          <strong>Explore 4 AI Modules</strong>
+          <span>Career Recommendation, Stream Selector, Degree Finder & Chatbot</span>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <div class="auth-benefit-icon"><i class="fas fa-file-alt"></i></div>
+        <div class="auth-benefit-text">
+          <strong>Save All Your Reports</strong>
+          <span>Access your career reports and results anytime</span>
+        </div>
+      </div>
+      <div class="auth-benefit">
+        <div class="auth-benefit-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="auth-benefit-text">
+          <strong>100% Free for Students</strong>
+          <span>No credit card required — completely free</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="auth-panel-right">
+      <div class="auth-card-title">Create Account</div>
+      <p class="auth-card-sub">Start your career journey — it's completely free</p>
+
+      <div id="reg-alert" class="alert"></div>
+
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="full_name">Full Name</label>
+          <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create a strong password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Re-enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">
+          <i class="fas fa-user-plus"></i> Create Free Account
+        </button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="/login.html">Sign in</a></p>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

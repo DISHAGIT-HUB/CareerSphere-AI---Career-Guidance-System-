@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Career Chatbot — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div style="padding:40px 0;background:var(--gray-50);min-height:calc(100vh - 180px)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:28px">
+        <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:800;color:var(--navy)">
+          AI Career <span style="color:var(--blue-light)">Chatbot</span>
+        </h1>
+        <p style="color:var(--gray-400);font-size:.92rem">Ask me anything about careers, courses, streams, and exams</p>
+      </div>
+
+      <!-- Suggestions -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px">
+        <button onclick="sendSuggestion('What are the best careers after 12th Science?')" class="tag" style="cursor:pointer;padding:8px 14px">
+          Best careers after 12th Science
+        </button>
+        <button onclick="sendSuggestion('Which stream should I choose after 10th?')" class="tag" style="cursor:pointer;padding:8px 14px">
+          Which stream after 10th?
+        </button>
+        <button onclick="sendSuggestion('What is JEE and how to prepare for it?')" class="tag" style="cursor:pointer;padding:8px 14px">
+          About JEE preparation
+        </button>
+        <button onclick="sendSuggestion('List top career options in Commerce stream')" class="tag" style="cursor:pointer;padding:8px 14px">
+          Careers in Commerce
+        </button>
+      </div>
+
+      <!-- Chat Widget -->
+      <div class="chat-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+          <div>
+            <div class="chat-name">CareerSphere AI Assistant</div>
+            <div class="chat-status">Online — Ready to help</div>
+          </div>
+          <button onclick="clearChat()" class="btn btn-outline btn-sm" style="margin-left:auto;font-size:.78rem">
+            <i class="fas fa-trash-alt"></i> Clear
+          </button>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Messages injected by JS -->
+        </div>
+
+        <div class="chat-input-area">
+          <textarea id="chat-input" placeholder="Ask about careers, streams, exams, colleges..." rows="1"></textarea>
+          <button class="chat-send" id="chat-send">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+<script>
+function clearChat() {
+  const el = document.getElementById('chat-messages');
+  if (el) { el.innerHTML = ''; }
+  setTimeout(() => sendSuggestion && document.getElementById('chat-messages') && null, 0);
+  // Show greeting again
+  const row = document.createElement('div');
+  row.className = 'msg-row bot';
+  row.innerHTML = `
+    <div class="msg-icon bot"><i class="fas fa-robot"></i></div>
+    <div class="msg-bubble msg-bot">Chat cleared! How can I help you with your career journey today? 😊</div>`;
+  el.appendChild(row);
+}
+</script>
+</body>
+</html>

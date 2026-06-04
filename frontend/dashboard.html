@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<!-- Mobile dashboard navigation (visible only on small screens) -->
+<nav class="mobile-dash-nav">
+  <a href="/dashboard.html" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
+  <a href="/reports.html"><i class="fas fa-file-alt"></i> Reports</a>
+  <a href="/profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+  <a href="/career-recommendation.html"><i class="fas fa-compass"></i> Career</a>
+  <a href="/stream-selector.html"><i class="fas fa-layer-group"></i> Stream</a>
+  <a href="/degree-finder.html"><i class="fas fa-university"></i> Degrees</a>
+  <a href="/chatbot.html"><i class="fas fa-robot"></i> Chat</a>
+</nav>
+<main>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Main</div>
+        <a href="/dashboard.html" class="sidebar-link active">
+          <i class="fas fa-th-large"></i> Dashboard
+        </a>
+        <a href="/reports.html" class="sidebar-link">
+          <i class="fas fa-file-alt"></i> My Reports
+        </a>
+        <a href="/profile.html" class="sidebar-link">
+          <i class="fas fa-user-circle"></i> Profile
+        </a>
+      </div>
+      <div class="sidebar-section" style="margin-top:12px">
+        <div class="sidebar-label">Modules</div>
+        <a href="/career-recommendation.html" class="sidebar-link">
+          <i class="fas fa-compass"></i> Career Rec.
+        </a>
+        <a href="/stream-selector.html" class="sidebar-link">
+          <i class="fas fa-layer-group"></i> Stream Selector
+        </a>
+        <a href="/degree-finder.html" class="sidebar-link">
+          <i class="fas fa-university"></i> Degree Finder
+        </a>
+        <a href="/chatbot.html" class="sidebar-link">
+          <i class="fas fa-robot"></i> AI Chatbot
+        </a>
+      </div>
+      <div class="sidebar-section" style="margin-top:12px">
+        <div class="sidebar-label">Account</div>
+        <a href="#" onclick="logout()" class="sidebar-link" style="color:var(--danger)">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+
+      <!-- Welcome Banner -->
+      <div class="dash-welcome">
+        <h2>Welcome back, <span id="dash-user-name">Student</span>! 👋</h2>
+        <p>Continue your career exploration journey. Your personalized tools are ready.</p>
+        <a href="/career-recommendation.html" class="btn btn-white btn-sm" style="margin-top:16px">
+          <i class="fas fa-compass"></i> Start Career Rec.
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon si-blue"><i class="fas fa-puzzle-piece"></i></div>
+          <div>
+            <div class="stat-num" id="dash-modules-used">0</div>
+            <div class="stat-label">Modules Used</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-green"><i class="fas fa-file-alt"></i></div>
+          <div>
+            <div class="stat-num" id="dash-reports-count">0</div>
+            <div class="stat-label">Reports Saved</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-amber"><i class="fas fa-star"></i></div>
+          <div>
+            <div class="stat-num" id="dash-career-recs">0</div>
+            <div class="stat-label">Career Recs.</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-purple"><i class="fas fa-fire"></i></div>
+          <div>
+            <div class="stat-num" id="dash-streak">0</div>
+            <div class="stat-label">Day Streak</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dash-grid">
+        <!-- Quick Access Modules -->
+        <div class="dash-card">
+          <div class="dash-card-title">
+            Quick Access
+            <a href="/modules.html">View all</a>
+          </div>
+          <div class="module-shortcut">
+            <div class="ms-icon" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)"><i class="fas fa-compass"></i></div>
+            <div>
+              <div class="ms-label">Career Recommendation</div>
+              <div class="ms-desc">Get AI career suggestions</div>
+            </div>
+            <a href="/career-recommendation.html" class="ms-arrow"><i class="fas fa-chevron-right"></i></a>
+          </div>
+          <div class="module-shortcut">
+            <div class="ms-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"><i class="fas fa-layer-group"></i></div>
+            <div>
+              <div class="ms-label">Stream Selector</div>
+              <div class="ms-desc">Find your ideal stream after 10th</div>
+            </div>
+            <a href="/stream-selector.html" class="ms-arrow"><i class="fas fa-chevron-right"></i></a>
+          </div>
+          <div class="module-shortcut">
+            <div class="ms-icon" style="background:linear-gradient(135deg,#059669,#34d399)"><i class="fas fa-university"></i></div>
+            <div>
+              <div class="ms-label">Degree Finder</div>
+              <div class="ms-desc">Explore degrees after 12th</div>
+            </div>
+            <a href="/degree-finder.html" class="ms-arrow"><i class="fas fa-chevron-right"></i></a>
+          </div>
+          <div class="module-shortcut">
+            <div class="ms-icon" style="background:linear-gradient(135deg,#dc2626,#f87171)"><i class="fas fa-robot"></i></div>
+            <div>
+              <div class="ms-label">AI Career Chatbot</div>
+              <div class="ms-desc">Ask your career questions</div>
+            </div>
+            <a href="/chatbot.html" class="ms-arrow"><i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dash-card">
+          <div class="dash-card-title">
+            Recent Activity
+            <a href="/reports.html">See reports</a>
+          </div>
+          <div id="recent-activity">
+            <div class="activity-item">
+              <div class="activity-dot" style="background:var(--gray-300)"></div>
+              <div>
+                <div class="activity-text" style="color:var(--gray-400)">No activity yet. Use a module to get started!</div>
+                <div class="activity-time"></div>
+              </div>
+            </div>
+          </div>
+          <a href="/modules.html" class="btn btn-outline btn-sm btn-full" style="margin-top:20px">
+            <i class="fas fa-rocket"></i> Explore Modules
+          </a>
+        </div>
+      </div>
+
+      <!-- Tips Card -->
+      <div class="dash-card" style="margin-top:24px">
+        <div class="dash-card-title">💡 Getting Started Tips</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <div style="background:var(--blue-pale);border-radius:var(--radius-md);padding:16px">
+            <div style="font-weight:700;color:var(--navy);font-size:.9rem;margin-bottom:6px">Step 1</div>
+            <div style="font-size:.82rem;color:var(--gray-500)">Use <strong>Stream Selector</strong> if you're in 10th to find Science, Commerce or Arts.</div>
+          </div>
+          <div style="background:#d1fae5;border-radius:var(--radius-md);padding:16px">
+            <div style="font-weight:700;color:#065f46;font-size:.9rem;margin-bottom:6px">Step 2</div>
+            <div style="font-size:.82rem;color:var(--gray-500)">Get <strong>Career Recommendations</strong> based on your interests and subjects.</div>
+          </div>
+          <div style="background:#fef3c7;border-radius:var(--radius-md);padding:16px">
+            <div style="font-weight:700;color:var(--amber-dark);font-size:.9rem;margin-bottom:6px">Step 3</div>
+            <div style="font-size:.82rem;color:var(--gray-500)">Use <strong>Degree Finder</strong> to explore college programs and entrance exams.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

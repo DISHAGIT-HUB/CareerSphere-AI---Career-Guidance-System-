@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Degree Finder — CareerSphere</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">Career<span>Sphere</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<div id="navbar-placeholder"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Degree <em>Finder</em></h1>
+      <p>Search and explore detailed information about degrees, entrance exams, fee ranges, and career prospects after 12th.</p>
+    </div>
+  </section>
+
+  <section class="tool-page">
+    <div class="container">
+      <!-- Search Bar -->
+      <div class="degree-search-wrap" style="max-width:620px;margin:0 auto 40px;position:relative">
+        <i class="fas fa-search"></i>
+        <input type="text" id="degree-search" class="form-control" placeholder="Search degrees (e.g. Engineering, Medicine, Commerce, Law...)" style="padding-right:110px;padding-left:44px">
+        <button id="degree-search-btn" class="btn btn-primary" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);height:36px;padding:0 18px;font-size:.85rem">
+          Search
+        </button>
+      </div>
+
+      <!-- Popular tags -->
+      <div style="text-align:center;margin-bottom:32px">
+        <span style="font-size:.82rem;color:var(--gray-400);margin-right:8px">Popular:</span>
+        <button onclick="quickSearch('Engineering')" class="tag" style="cursor:pointer">Engineering</button>
+        <button onclick="quickSearch('Medicine')" class="tag" style="cursor:pointer">Medicine</button>
+        <button onclick="quickSearch('Commerce')" class="tag" style="cursor:pointer">Commerce</button>
+        <button onclick="quickSearch('Arts')" class="tag" style="cursor:pointer">Arts</button>
+        <button onclick="quickSearch('Law')" class="tag" style="cursor:pointer">Law</button>
+        <button onclick="quickSearch('Computer')" class="tag" style="cursor:pointer">Computer</button>
+      </div>
+
+      <!-- Degree Grid -->
+      <div id="degree-grid" class="degree-grid">
+        <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--gray-400)">
+          <span class="spinner" style="border-color:var(--blue-pale);border-top-color:var(--blue-mid);width:32px;height:32px;border-width:3px"></span>
+          <p style="margin-top:12px">Loading degrees...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/script.js"></script>
+<script>
+function quickSearch(term) {
+  const input = document.getElementById('degree-search');
+  if (input) { input.value = term; input.dispatchEvent(new Event('input')); }
+  document.getElementById('degree-search-btn')?.click();
+}
+</script>
+</body>
+</html>
