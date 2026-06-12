@@ -293,20 +293,8 @@ View Dashboard
 ---
 
 ## 📸 Screenshots
-![homepage] (Screenshots/Homepage.png)
-Screenshots\Create account page.png
-Screenshots\Profile page.png
-Screenshots\Sign in page.png
-Screenshots\Dashboard page.png
-Screenshots\Modules page.png
-Screenshots\AI Chatbot module.png
-Screenshots\Career Recommendation module.png
-Screenshots\Degree Finder module.png
-Screenshots\Stream Selector module.png
-Screenshots\Reports page.png
-Screenshots\backend database.png
-Screenshots\Backend Swagger UI page.png
 
+uploaded in screenshots folder.. 
 
 ## 👨‍💻 Developed By
 
